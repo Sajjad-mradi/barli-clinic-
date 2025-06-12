@@ -1,0 +1,285 @@
+<!DOCTYPE html>  <html lang="fa" dir="rtl">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>کلینیک زیبایی بارلی</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />  
+  <style>  
+    body {  
+      margin: 0;  
+      font-family: 'Vazirmatn', Tahoma, sans-serif;  
+      background: #fff;  
+      color: #333;  
+      overflow-x: hidden;  
+    }  header {  
+  background-color: #e60073;  
+  color: white;  
+  height: 90px;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  position: relative;  
+  padding: 0 20px;  
+}  
+
+.logo {  
+  font-weight: 700;  
+  font-size: 22px;  
+  text-align: center;  
+}  
+
+.menu-icon {  
+  position: absolute;  
+  left: 20px;  
+  font-size: 28px;  
+  cursor: pointer;  
+  user-select: none;  
+}  
+
+.barli-title {  
+  font-family: 'Dancing Script', cursive;  
+  font-size: 42px;  
+  color: #f2a1a1;  
+  text-align: center;  
+  margin: 20px 0 0;  
+}  
+
+.barli-subtitle {  
+  text-align: center;  
+  font-size: 15px;  
+  margin: 10px 0 30px;  
+  color: #888;  
+}  
+
+.service-box {  
+  width: 65%;  
+  max-width: 500px;  
+  margin: 10px auto;  
+  background: #f06292;  
+  border-radius: 12px;  
+  padding: 15px 20px;  
+  color: white;  
+  cursor: pointer;  
+  transition: background 0.3s;  
+}  
+
+.service-box:hover {  
+  background: #ec407a;  
+}  
+
+.service-box h3 {  
+  margin: 0;  
+  font-size: 18px;  
+}  
+
+.service-box p {  
+  margin: 4px 0 0;  
+  font-size: 13px;  
+  color: #fce4ec;  
+}  
+
+/* Drawer Styles */  
+#drawer {  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  width: 280px;  
+  height: 100%;  
+  background: #fce4ec;  
+  box-shadow: 2px 0 8px rgba(0,0,0,0.15);  
+  transform: translateX(-100%);  
+  transition: transform 0.3s ease;  
+  padding: 25px 20px;  
+  z-index: 1001;  
+}  
+
+#drawer.open {  
+  transform: translateX(0%);  
+}  
+
+#backdrop {  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  width: 100%;  
+  height: 100%;  
+  background: rgba(0,0,0,0.4);  
+  z-index: 1000;  
+  display: none;  
+}  
+
+#backdrop.active {  
+  display: block;  
+}  
+
+#drawer h3 {  
+  margin-top: 0;  
+  font-size: 22px;  
+  font-weight: 700;  
+  color: #880e4f;  
+  border-bottom: 2px solid #f06292;  
+  padding-bottom: 8px;  
+}  
+
+#drawer ul {  
+  list-style: none;  
+  padding: 0;  
+  margin-top: 25px;  
+}  
+
+#drawer ul li {  
+  margin-bottom: 20px;  
+  display: flex;  
+  align-items: center;  
+  gap: 12px;  
+}  
+
+#drawer ul li a {  
+  text-decoration: none;  
+  color: #880e4f;  
+  font-size: 17px;  
+  font-weight: 600;  
+  transition: color 0.2s;  
+}  
+
+#drawer ul li a:hover {  
+  color: #e60073;  
+}  
+
+#drawer ul li .icon {  
+  width: 26px;  
+  height: 26px;  
+}  
+
+#drawer .address {  
+  font-size: 15px;  
+  color: #6f406d;  
+  margin-top: 20px;  
+  line-height: 1.6;  
+}  
+
+#drawer .map-link {  
+  display: inline-block;  
+  margin-top: 15px;  
+  font-size: 15px;  
+  font-weight: 600;  
+  color: #e60073;  
+  text-decoration: none;  
+  border: 1.5px solid #e60073;  
+  padding: 6px 12px;  
+  border-radius: 8px;  
+  transition: background-color 0.25s, color 0.25s;  
+}  
+
+#drawer .map-link:hover {  
+  background-color: #e60073;  
+  color: white;  
+}  
+
+#drawer .contact {  
+  margin-top: 25px;  
+  font-size: 16px;  
+  font-weight: bold;  
+  color: #4a2c46;  
+  border-top: 1px dashed #d81b60;  
+  padding-top: 12px;  
+}  
+
+#drawer .contact a {  
+  display: inline-block;  
+  margin-top: 8px;  
+  font-size: 16px;  
+  color: #e60073;  
+  text-decoration: none;  
+}  
+
+#drawer .contact a:hover {  
+  text-decoration: underline;  
+}
+
+  </style>  
+</head>  
+<body>    <header>  
+    <div class="menu-icon" id="menu-toggle">☰</div>  
+    <div class="logo">کلینیک زیبایی بارلی</div>  
+  </header>    <!-- Drawer -->    <div id="drawer">  
+    <h3>اطلاعات تماس</h3>  
+    <ul>  
+      <li>  
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="واتساپ" class="icon" />  
+        <a href="https://wa.me/+989030614940" target="_blank" rel="noopener noreferrer">واتساپ</a>  
+      </li>  
+      <li>  
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="اینستاگرام" class="icon" />  
+        <a href="https://www.instagram.com/laser_barli" target="_blank" rel="noopener noreferrer">اینستاگرام</a>  
+      </li>  
+    </ul>  
+    <div class="address">  
+      آدرس کلینیک: ۲۰۰ متر بعد از چهارراه امام خمینی به سمت مطهر نیا، خیابان بارلی  
+    </div>  
+    <a class="map-link" href="https://www.google.com/maps/place/Barli+Clinic/@35.6892,51.389,17z" target="_blank">مشاهده در گوگل مپ</a>  
+    <div class="contact">  
+      ارتباط با ما:<br />  
+      <a href="tel:+989030614940">۰۹۰۳۰۶۱۴۹۴۰</a>  
+    </div>  
+  </div>    <!-- Backdrop -->    <div id="backdrop"></div>    <div class="barli-title">Barli</div>  
+  <div class="barli-subtitle">جهت رزرو نوبت، خدمات زیبایی مورد نظر را انتخاب کنید</div>    <div class="service-box" onclick="location.href='laser.html'">  
+    <h3>لیزر موهای زائد</h3>  
+    <p>Laser Hair Removal</p>  
+  </div>  
+  <div class="service-box" onclick="location.href='filler.html'">  
+    <h3>تزریق ژل</h3>  
+    <p>Dermal Filler Injection</p>  
+  </div>  
+  <div class="service-box" onclick="location.href='botox.html'">  
+    <h3>تزریق بوتاکس</h3>  
+    <p>Botox Injection</p>  
+  </div>  
+  <div class="service-box" onclick="location.href='hifu.html'">  
+    <h3>هایفوتراپی (لیفتینگ غیرجراحی)</h3>  
+    <p>HIFU (High-Intensity Focused Ultrasound)</p>  
+  </div>  
+  <div class="service-box" onclick="location.href='hair-transplant.html'">  
+    <h3>کاشت مو</h3>  
+    <p>Hair Transplant</p>  
+  </div>  
+  <div class="service-box" onclick="location.href='eyebrow.html'">  
+    <h3>کاشت ابرو</h3>  
+    <p>Eyebrow Transplant</p>  
+  </div>  
+  <div class="service-box" onclick="location.href='facial.html'">  
+    <h3>فیشیال و مراقبت‌های پوستی</h3>  
+    <p>Facial and Skin Care</p>  
+  </div>  
+  <div class="service-box" onclick="location.href='tattoo-removal.html'">  
+    <h3>پاک کردن تتو</h3>  
+    <p>Tattoo Removal</p>  
+  </div>  
+  <div class="service-box" onclick="location.href='carboxy.html'">  
+    <h3>کربوکسی تراپی</h3>  
+    <p>Carboxytherapy</p>  
+  </div>  
+  <div class="service-box" onclick="location.href='fat-injection.html'">  
+    <h3>تزریق چربی</h3>  
+    <p>Fat Injection / Fat Grafting</p>  
+  </div>    <script>  
+    const menuToggle = document.getElementById('menu-toggle');  
+    const drawer = document.getElementById('drawer');  
+    const backdrop = document.getElementById('backdrop');  
+  
+    function openDrawer() {  
+      drawer.classList.add('open');  
+      backdrop.classList.add('active');  
+    }  
+  
+    function closeDrawer() {  
+      drawer.classList.remove('open');  
+      backdrop.classList.remove('active');  
+    }  
+  
+    menuToggle.addEventListener('click', openDrawer);  
+    backdrop.addEventListener('click', closeDrawer);  
+  </script>  
+
+</body>  
+</html>
